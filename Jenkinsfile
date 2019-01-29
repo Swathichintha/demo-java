@@ -2,10 +2,14 @@ node{
 
    stage('SCM Checkout'){
       git "https://github.com/Swathichintha/demo-java"
-    }
+   }
     
-    stage('Compile-Package'){
+   stage('Compile-Package'){
        sh 'mvn package'
-    }
+   }
+   
+   stage('Deploy'){
+      sh 'mvn deploy'
+   }   
     
 }
