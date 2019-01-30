@@ -9,7 +9,8 @@ node{
    }
    
    stage('Deploy'){
-      sh 'mvn deploy'
+      sh 'docker build -t hello:1.0 .'
+      sh 'docker run -d hello:1.0 -p 80:8080'
    }   
     
 }
