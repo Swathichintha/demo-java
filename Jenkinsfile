@@ -9,8 +9,8 @@ node{
    }
    
    stage('Deploy'){
-      sh 'docker build -t hello:1.0 .'
-      sh 'docker run -d hello:1.0 -p 80:8080'
+      sh 'docker build -t hello:1.1'
+      sh 'docker run -d hello:1.1 -p 80:8080'
    }   
     
 }
