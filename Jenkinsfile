@@ -3,6 +3,12 @@ node{
    stage('SCM Checkout'){
       git "https://github.com/Swathichintha/demo-java"
    }
+   stage('SonarQube analysis') {
+    // requires SonarQube Scanner 2.8+
+    def scannerHome = tool 'sonarScanner';
+    withSonarQubeEnv('SonarQube 6.2') {
+      bat "${scannerHome}/bin/sonar-runner.bat"
+    }
     
    stage('Compile-Package'){
        sh 'mvn package'
