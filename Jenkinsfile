@@ -9,7 +9,6 @@ node{
    }
    
    stage('Deploy'){
-      sh 'sudo usermod -aG docker jenkins'
       sh 'chmod 777 /var/run/docker.sock'
       sh 'docker build -f Dockerfile -t hello:1.0 . '
       sh 'docker run -d hello:1.0 -p 80:8080'
