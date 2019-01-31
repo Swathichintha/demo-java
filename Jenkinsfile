@@ -9,7 +9,6 @@ node{
    }
    
    stage('Deploy'){
-      sh 'sudo groupadd docker'
       sh 'sudo usermod -aG docker jenkins'
       sh 'chmod 777 /var/run/docker.sock'
       sh 'docker build -f Dockerfile -t hello:1.0 . '
