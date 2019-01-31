@@ -5,10 +5,11 @@ node{
    }
    stage('SonarQube analysis') {
     // requires SonarQube Scanner 2.8+
-    def scannerHome = tool 'sonarScanner';
-    withSonarQubeEnv('SonarQube 6.2') {
+      def scannerHome = tool 'sonarScanner';
+      withSonarQubeEnv('SonarQube 6.2') {
       bat "${scannerHome}/bin/sonar-runner.bat"
-    }
+      }
+   }
     
    stage('Compile-Package'){
        sh 'mvn package'
