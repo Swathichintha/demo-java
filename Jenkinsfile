@@ -8,13 +8,13 @@ node{
       def scannerHome = tool 'sonarscanner';
       withSonarQubeEnv('sonar') {
       sh "${scannerHome}/bin/sonar-scanner"
-      properties {
+   //   properties {
 //property "sonar.host.url", http://sonar.xxxxx.com //  url is your sonar server
-         property "sonar.projectName", "${JOB_NAME}"   // this name will appear in dashboard
-         property "sonar.projectKey", "${BUILD_NUMBER}" // It sould be a keybased on this report is created
+    //     property "sonar.projectName", "${JOB_NAME}"   // this name will appear in dashboard
+    //     property "sonar.projectKey", "${BUILD_NUMBER}" // It sould be a keybased on this report is created
 //property "sonar.groovy.jacoco.reportPath", "${project.buildDir}/jacoco/test.exec"   
       }
-   }
+  // }
    }
     
    stage('Compile-Package'){
