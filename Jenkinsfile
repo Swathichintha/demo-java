@@ -24,6 +24,8 @@ node{
    stage('Deploy'){
       sh 'cp target/demo.war .'
       sh 'docker build -t hello:1.0 . '
+      sh 'docker stop hello'
+      sh 'docker rm hello'
       sh 'docker run -d --name=hello -p 80:8080 hello:1.0'
    }   
     
