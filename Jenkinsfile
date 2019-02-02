@@ -7,7 +7,7 @@ node{
     // requires SonarQube Scanner 2.8+
       def scannerHome = tool 'sonarscanner';
       withSonarQubeEnv('sonar') {
-      sh "${scannerHome}/bin/sonar-runner.sh"
+      sh "${scannerHome}/bin/sonar-scanner"
       }
    }
     
