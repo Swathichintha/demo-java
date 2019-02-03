@@ -18,7 +18,7 @@ node{
    }
     
    stage('Build and Deploy'){
-       sh 'mvn clean deploy'\
+       sh 'mvn deploy'
    }
    stage('Deploy'){
       sh 'cp target/demo.war .'
