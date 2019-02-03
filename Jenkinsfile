@@ -17,10 +17,9 @@ node{
   // }
    }
     
-   stage('Compile-Package'){
-       sh 'mvn package'
+   stage('Build and Deploy'){
+       sh 'mvn clean deploy'\
    }
-   
    stage('Deploy'){
       sh 'cp target/demo.war .'
       sh 'docker build -t hello:1.0 . '
