@@ -23,6 +23,26 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.0.0</version>
       </plugin>
+      <plugin>
+      <groupId>org.sonatype.plugins</groupId>
+   <artifactId>nexus-staging-maven-plugin</artifactId>
+   <version>1.3</version>
+   <executions>
+      <execution>
+         <id>default-deploy</id>
+         <phase>deploy</phase>
+         <goals>
+            <goal>deploy</goal>
+         </goals>
+      </execution>
+   </executions>
+   <configuration>
+      <serverId>1234</serverId>
+      <nexusUrl>http://18.218.17.26:8081/nexus/</nexusUrl>
+      <skipStaging>true</skipStaging>
+   </configuration>
+      </plugin>
+
     </plugins>
   </build>
   <dependencies>
