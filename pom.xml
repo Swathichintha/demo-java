@@ -43,4 +43,15 @@
         <version>3.1.0</version>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <url>http://18.218.17.26:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>nexus-releases</id>
+      <url>http://18.218.17.26:8081/repository/maven-releases/</url>
+    </repository>
+  </distributionManagement>
+
 </project>
